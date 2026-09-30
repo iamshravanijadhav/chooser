@@ -545,6 +545,9 @@ function renderSteps(applyDefaults, state) {
 
 // function to initialize state
 function initializeState(state) {
+    setStateParts(state);
+    setStatePossibilities(state);
+    setDefaults(applyDefaults);
     setStateProps(0, state);
 }
 
@@ -718,12 +721,6 @@ function watchMarkCopiers(copiers, state) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
     // full flow logic 
-    setStateParts(state);
-
-    setStatePossibilities(state);
-
-    setDefaults(applyDefaults);
-
     initializeState(state);
 
     watchFieldsets(fieldsets, state);
